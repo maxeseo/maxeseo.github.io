@@ -3,5 +3,5 @@
 angular
   .module('matchupApp', [
       'playerList'
-  ])
+  ]);
   
