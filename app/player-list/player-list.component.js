@@ -6,16 +6,12 @@ angular.
         templateUrl: 'player-list/player-list.html',
 
         controller: function PlayerListController() {            
-            this.logs = function() {
-                console.log(this.players);
-                console.log(this.playersFought);
-            }
-
             this.namesEntered = false;
             this.addNames = addNames;
             this.reset = reset;
             this.addPlayerFought = addPlayerFought;
             this.removePlayer = removePlayer;
+            this.clearQueue = clearQueue;
 
             this.maxQueueSize = 4;
             this.playersFought = [];
@@ -100,6 +96,12 @@ angular.
                     player.name = '';
                     player.canFight = true;
                     player.isAlive = true;
+                });
+            }
+
+            function clearQueue() {
+                _.each(this.players, function(player) {
+                    player.canFight = true;
                 });
             }
         }

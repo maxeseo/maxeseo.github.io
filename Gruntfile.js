@@ -31,9 +31,15 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
-
     // Project settings
     yeoman: appConfig,
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
+      }
+    },
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -47,13 +53,6 @@ module.exports = function (grunt) {
           branch: 'gh-pages'
         }
       },
-      local: {
-        options: {
-          remote: '../',
-          branch: 'build'
-        }
-      }
-    },
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {

@@ -1,5 +1,4 @@
 <div class="container-fluid">
-    <button ng-click="$ctrl.logs()">Print Logs</button>
     <h4>Player Name</h4>
     <form ng-submit="$ctrl.addNames()">
         <div ng-show="!$ctrl.namesEntered" ng-repeat="player in $ctrl.players">
@@ -19,12 +18,13 @@
         <div>
             <input ng-show="!$ctrl.namesEntered" type="submit" value="Add Names">
             <input ng-show="$ctrl.namesEntered" type="reset" ng-click="$ctrl.reset()" value="Reset">
+            <button ng-show="$ctrl.namesEntered"  ng-click="$ctrl.clearQueue()">Clear Queue</button>
         </div>
     </form>
     <div ng-show="$ctrl.namesEntered">
         <h4>Fight Pool</h4>
         <div ng-repeat="player in $ctrl.players">
-            <div ng-show="player.canFight && player.isAlive">{{player.name}}</div>
+            <div style="font-size: 30px;" ng-show="player.canFight && player.isAlive">{{player.name}}</div>
         </div>
     </div>
 </div>
