@@ -38,8 +38,8 @@ module.exports = function (grunt) {
           remote: '../',
           branch: 'build'
         }
-      }
-    },
+      },
+    
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -52,7 +52,8 @@ module.exports = function (grunt) {
           remote: 'git@github.com:maxeseo/maxeseo.github.io.git',
           branch: 'gh-pages'
         }
-      },
+      }
+    },
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
